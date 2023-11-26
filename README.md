@@ -1,3 +1,4 @@
+<p align="center">
 # Study of Algorithms and Data Structures
 
 <p align="center">
