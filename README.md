@@ -6,7 +6,7 @@
 
 ## Description
 
-This repository is dedicated to the study of Algorithms and Data Structures.
+This repository is dedicated to the study of Algorithms and Data Structures using C++.
 
 ## Author
 
