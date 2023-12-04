@@ -10,39 +10,52 @@ struct Node
     Node *proximo;
 };
 
-void adicionarDevedor(Node*& lista, string nome, float valor) {
-    Node* novoDevedor = new Node;
+void adicionarDevedor(Node *&lista, string nome, float valor)
+{
+    Node *novoDevedor = new Node;
     novoDevedor->nome = nome;
     novoDevedor->valor = valor;
     novoDevedor->proximo = nullptr;
 
-    if (lista == nullptr) {
+    if (lista == nullptr)
+    {
         lista = novoDevedor;
-    } else {
-        Node* atual = lista;
-        while (atual->proximo != nullptr) {
+    }
+    else
+    {
+        Node *atual = lista;
+        while (atual->proximo != nullptr)
+        {
             atual = atual->proximo;
         }
         atual->proximo = novoDevedor;
     }
 }
 
-void quitarDivida(Node*& lista, string nome) {
-    Node* atual = lista;
-    Node* anterior = nullptr;
+void quitarDivida(Node *&lista, string nome)
+{
+    Node *atual = lista;
+    Node *anterior = nullptr;
 
-    while (atual != nullptr) {
-        if (atual->nome == nome) {
-            Node* temp = atual;
-            if (anterior != nullptr) {
+    while (atual != nullptr)
+    {
+        if (atual->nome == nome)
+        {
+            Node *temp = atual;
+            if (anterior != nullptr)
+            {
                 anterior->proximo = atual->proximo;
                 atual = atual->proximo;
-            } else {
+            }
+            else
+            {
                 lista = atual->proximo;
                 atual = lista;
             }
             delete temp;
-        } else {
+        }
+        else
+        {
             anterior = atual;
             atual = atual->proximo;
         }
@@ -55,7 +68,8 @@ void exibirLista(Node *lista)
     Node *atual = lista;
     while (atual != nullptr)
     {
-        if(atual->valor != 0){
+        if (atual->valor != 0)
+        {
             cout << atual->nome << endl;
             cout << atual->valor << endl;
         }
